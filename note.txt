@@ -1,0 +1,33 @@
+type ="module" , .js  equal to .mjs
+
+
+root directory => the folder that contains package.json, always open this folder
+
+json =>javascript object notaion, it an object whose keys are wraped in double quotes, it doesnt include comma at the end.
+
+
+backend ==> making api 
+
+WORK (crud)
+c(create) => POST
+r(read)   => GET
+u(update) => PATCH
+d(delete) => delete
+
+frontend makes request to backend,
+backend preforms task as per the request
+
+to request 
+    url 
+    method => post | get | patch | delete
+
+work of backend
+    is making api
+    making api means defining for a particular request
+
+Route
+
+to get the data sent in the body we use req.body
+for dynamic route ==> req.params
+everything in the URL is  string""
+
