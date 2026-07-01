@@ -27,10 +27,23 @@ res.json({
     message:"updated sucessfully"
 })
 
-
-
 })
-.delete((req,res,next) =>{console.log("d")})
+.delete(
+    (req,res,next) =>{
+        console.log("i am middleware 1");
+        const error = new Error("smthin went wrong");
+         next(error);
+        },
+        // (err,req,res,next)=>{
+        //     console.log("i am error middleware")
+        //     next();
+
+        // },
+  (req,res,next) =>{
+        console.log("i am middleware 2");
+         next();
+        
+        })
 
 
 //here we requested from a different specific route

@@ -24,7 +24,7 @@ country
 .get((req,res,next)=>{
     res.json({
         sucess:true,
-        message:"country read successfully"
+        message:"specific country read successfully"
     })
 })
 .patch((req,res,next)=>{

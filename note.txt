@@ -31,3 +31,26 @@ to get the data sent in the body we use req.body
 for dynamic route ==> req.params
 everything in the URL is  string""
 
+Middleware
+    it is a function which has req,res,next
+    based on parameter there is two types of Middleware
+        normal Middleware
+            (req,res,next) ={}
+            next() is used to call normal Middleware
+
+        Error middle ware 
+            (err,req,res,next) => {}
+            next(error) is used to call error middleware
+
+    based on location,
+        route middleware
+        application middleware => it will run for every route
+
+
+    what hapens when api is hit
+        itll execute middleware from application (main file)
+        when api is hit first it executes normal middleware
+
+tackle import   
+
+ let k = a.b("c",e.f.g, h.i()) ==> import a , e ,h
