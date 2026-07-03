@@ -18,7 +18,7 @@ productRoute
   })
 })
 .get(async (req,res,next)=>{
-    const result = await Product.find({})
+    const result = await Product.find({}) //this predefined function gets all the data 
     res.json({
         sucess: true,
         message:"Product read successfully",
@@ -30,7 +30,7 @@ productRoute
 productRoute
 .route("/:id")
 .get(async (req,res,next)=>{
-    //here the findById is a predefined method
+    //here the findById is a predefined method that finds specific data
     const result = await Product.findById(req.params.id)
     res.json({
     sucess:true,
@@ -38,7 +38,8 @@ productRoute
     result:result,
     })
 })
-.patch(async(req,res,next)=>{                        //specific-id  //new-data(updated sent from postman)
+.patch(async(req,res,next)=>{     //this updates our product table 
+                                                    //specific-id  //new-data(updated sent from postman)
     const result = await Product.findByIdAndUpdate(req.params.id,req.body,{
         //new:true shows the updated data 
         new:true

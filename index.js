@@ -7,6 +7,8 @@ import errorMessage from "./src/middleware/errorMessage.js";
 import pageNotFound from "./src/middleware/pageNotFound.js";
 import connectToMongoDb from "./src/connectToDb/connectToMongoDb.js";
 import productRoute from "./src/route/productRoute.js";
+import userRoute from "./src/route/userRoute.js";
+import schoolRoute from "./src/route/schoolRoute.js";
 
 const app = express(); // here we created an express application or a backend application
 let port = 8000; 
@@ -26,8 +28,10 @@ make route, and "use" that route to index.js */
 app.use(firstRoute);
 app.use("/address",addressRoute);
 app.use("/admin",adminRoute);
-app.use("/country",country)
+app.use("/country",country);
 app.use("/product",productRoute);
+app.use("/user",userRoute);
+app.use("/school",schoolRoute);
 
 
 app.use("",pageNotFound)
