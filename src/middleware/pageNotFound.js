@@ -1,5 +1,5 @@
 const pageNotFound = (err,req,res,next)=>{
-res.json({
+res.status(404).json({
     success: false,
     message: err.message,
 });

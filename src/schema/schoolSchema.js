@@ -18,6 +18,16 @@ const schoolSchema = Schema({
         required : [true , "email is required"],
     },
     hasPlusTwo: Boolean,
+},
+{
+    timestamps:true,
+    toJSON:{
+        transform:(doc,ret)=>{
+            ret.id=ret._id;
+            delete ret._id;
+            delete ret.__v;       
+         },
+    }
 });
 
 export default schoolSchema;
