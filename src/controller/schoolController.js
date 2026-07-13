@@ -10,7 +10,8 @@ export const schoolPost = async (req,res,next) =>{
 }
 
 export const schoolGet = async(req,res,next)=>{
-    const result = await School.find({});
+    // const result = await School.find({});
+    const result = await School.find({name:"rojaa"})
     res.status(200).json({
             sucess:true,
         message: "School read successfully",
