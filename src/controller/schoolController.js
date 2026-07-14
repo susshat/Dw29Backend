@@ -16,7 +16,23 @@ export const schoolGet = async(req,res,next)=>{
 
 
     //here we adding the value sent from the url 
-    const result = await School.find(req.query);
+    //  const result = await School.find(req.query)
+
+
+    //here we destructured the querry values and use them with find() like so below
+
+    //localhost:8000/school?sort=name&select=name email&limit=2&skip=1&name=rojuu
+    //keep in mind if when you use skip if you have only one data it will show empty array
+    const {sort,select,limit,skip,...query}  = req.query;
+
+
+
+    const result = await School.find(query)
+    .sort(sort)
+    .select(select)
+    .limit(limit)
+    .skip(skip);
+
     console.log(result);
 
     res.status(200).json({
