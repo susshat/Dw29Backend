@@ -11,7 +11,14 @@ export const schoolPost = async (req,res,next) =>{
 
 export const schoolGet = async(req,res,next)=>{
     // const result = await School.find({});
-    const result = await School.find({name:"rojaa"})
+    // const result = await School.find({name:"rojaa"})
+    // const result = await School.find({name:"rojaa"}).select("name email")
+
+
+    //here we adding the value sent from the url 
+    const result = await School.find(req.query);
+    console.log(result);
+
     res.status(200).json({
             sucess:true,
         message: "School read successfully",
